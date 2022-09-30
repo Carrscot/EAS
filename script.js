@@ -16,8 +16,8 @@ container.appendChild(box)
 }
 
 function startState() {
-    
-const container = document.querySelector('#container');
+const old = document.querySelector('#container');
+    old.innerHTML = '';
 
     for(let i = 0; i < 256; i++) {
         const box = document.createElement('div');
@@ -29,9 +29,9 @@ const container = document.querySelector('#container');
         function black(){
             box.style.backgroundColor = 'black';
         }
-    }
-
 container.appendChild(box)
+
+    }
 }
 
 function resetState(){

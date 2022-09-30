@@ -10,5 +10,5 @@ etch-a-sketch
 3. (Done) Create Reset button
 	- eventlistner for click on the button that changes all divs back to white. > Removes all divs
 4. Create start button
-	-First iteration just resets the original 16x16 grid
+	-First iteration just resets the original 16x16 grid >> Done
 	-nNext iteration prompts users for the dimensions of the grid
