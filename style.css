@@ -1,0 +1,23 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    height: 672px;
+    width: 672px;
+    padding: 0px;
+}
+
+.box {
+    display: flex;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    padding: 0px;
+    margin: 0px;
+}
