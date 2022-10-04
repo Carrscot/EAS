@@ -38,12 +38,6 @@ container.appendChild(box)
     }
 }
 
-function resetState(){
-    const old = document.querySelector('#container');
-    old.innerHTML = '';
-    }
-
-
 const options = document.querySelector('#options')
 
 const start = document.createElement('button');
@@ -52,22 +46,11 @@ const start = document.createElement('button');
 
 options.appendChild(start);
 
-const reset = document.createElement('button');
-    reset.classList.add('reset');
-    reset.textContent = 'Reset';
-
-options.appendChild(reset);
-
 const custom = document.createElement('button');
     custom.classList.add('custom');
     custom.textContent = 'Custom Grid';
 
 options.appendChild(custom);
-
-
-const resetClick = document.querySelector('.reset');
-reset.addEventListener('click', resetState);
-
 
 const startClick = document.querySelector('.start');
 start.addEventListener('click', startState);
