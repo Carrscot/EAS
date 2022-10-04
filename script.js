@@ -4,6 +4,8 @@ const container = document.querySelector('#container');
 for(let i = 0; i < 256; i++) {
     const box = document.createElement('div');
         box.classList.add('box');
+        box.style.height = '40px';
+        box.style.width = '40px';
     
     const change = document.querySelector('.box');
         box.addEventListener('mouseover', black);
@@ -22,6 +24,8 @@ const old = document.querySelector('#container');
     for(let i = 0; i < 256; i++) {
         const box = document.createElement('div');
             box.classList.add('box');
+            box.style.height = '40px';
+            box.style.width = '40px';
         
         const change = document.querySelector('.box');
             box.addEventListener('mouseover', black);
@@ -54,6 +58,12 @@ const reset = document.createElement('button');
 
 options.appendChild(reset);
 
+const custom = document.createElement('button');
+    custom.classList.add('custom');
+    custom.textContent = 'Custom Grid';
+
+options.appendChild(custom);
+
 
 const resetClick = document.querySelector('.reset');
 reset.addEventListener('click', resetState);
@@ -62,6 +72,40 @@ reset.addEventListener('click', resetState);
 const startClick = document.querySelector('.start');
 start.addEventListener('click', startState);
 
+
+function cusGrid (){
+    const old = document.querySelector('#container');
+    old.innerHTML = '';
+
+    const gridSize = prompt('Please choose the dimensions of the grid. INTEGERS <100 ONLY!', 'eg. 64');
+    const boxSize = (672-gridSize*2)/gridSize;
+
+    if (gridSize > 100 || gridSize <= 0 || gridSize ===''){
+        old.innerHTML = '';
+        alert('This selection is not valid.');
+    }
+    
+    else {for(let i = 0; i < (gridSize*gridSize) ; i++) {
+        const box = document.createElement('div');
+            box.classList.add('box');
+            box.style.width =  `${boxSize}px`;            
+            box.style.height = `${boxSize}px`;            
+        
+        const change = document.querySelector('.box');
+            box.addEventListener('mouseover', black);
+    
+        function black(){
+            box.style.backgroundColor = 'black';
+        }
+container.appendChild(box)
+    }
+
+    }
+
+}
+
+const customClick = document.querySelector('.custom');
+custom.addEventListener('click', cusGrid);
 
 
 
