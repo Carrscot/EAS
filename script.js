@@ -121,10 +121,6 @@ function rgbGrid (){
 
     const gridSize = prompt('Please choose the dimensions of the grid. INTEGERS <100 ONLY!', 'eg. 64');
     const boxSize = (672-gridSize*2)/gridSize;
-    let colorValue1 = Math.floor(Math.random()*256);
-    let colorValue2 = Math.floor(Math.random()*256);
-    let colorValue3 = Math.floor(Math.random()*256);
-    let colorRandom = `rgb(${colorValue1}, ${colorValue2}, ${colorValue3}`;
 
     if (gridSize > 100 || gridSize <= 0 || gridSize ===''){
         old.innerHTML = '';
@@ -141,7 +137,7 @@ function rgbGrid (){
             box.addEventListener('mouseover', color);
     
         function color(){
-            box.style.backgroundColor = colorRandom;
+            box.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}`;
         }
 container.appendChild(box)
         }
