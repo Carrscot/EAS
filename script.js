@@ -98,7 +98,7 @@ function cusGrid (){
             box.style.backgroundColor = 'black';
         }
 container.appendChild(box)
-    }
+        }
 
     }
 
@@ -107,6 +107,51 @@ container.appendChild(box)
 const customClick = document.querySelector('.custom');
 custom.addEventListener('click', cusGrid);
 
+const bonus = document.querySelector('#bonus')
+
+const rgb = document.createElement('button');
+    rgb.classList.add('rgb');
+    rgb.textContent = 'Custom RGB';
+
+bonus.appendChild(rgb);
+
+function rgbGrid (){
+    const old = document.querySelector('#container');
+    old.innerHTML = '';
+
+    const gridSize = prompt('Please choose the dimensions of the grid. INTEGERS <100 ONLY!', 'eg. 64');
+    const boxSize = (672-gridSize*2)/gridSize;
+    let colorValue1 = Math.floor(Math.random()*256);
+    let colorValue2 = Math.floor(Math.random()*256);
+    let colorValue3 = Math.floor(Math.random()*256);
+    let colorRandom = `rgb(${colorValue1}, ${colorValue2}, ${colorValue3}`;
+
+    if (gridSize > 100 || gridSize <= 0 || gridSize ===''){
+        old.innerHTML = '';
+        alert('This selection is not valid.');
+    }
+    
+    else {for(let i = 0; i < (gridSize*gridSize) ; i++) {
+        const box = document.createElement('div');
+            box.classList.add('box');
+            box.style.width =  `${boxSize}px`;            
+            box.style.height = `${boxSize}px`;            
+        
+        const change = document.querySelector('.box');
+            box.addEventListener('mouseover', color);
+    
+        function color(){
+            box.style.backgroundColor = colorRandom;
+        }
+container.appendChild(box)
+        }
+
+    }
+
+}
+
+const colorClick = document.querySelector('.rgb');
+rgb.addEventListener('click', rgbGrid);
 
 
 
